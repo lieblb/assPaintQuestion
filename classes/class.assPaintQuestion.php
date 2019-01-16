@@ -566,7 +566,7 @@ class assPaintQuestion extends assQuestion
 			}
 
 			$matches = array();
-			if(preg_match("/^data:image\/png;base64,(?<base64>.+)$/", $value, $matches) === 1) {
+			if(preg_match('/^data:image\/png;base64,(?<base64>.+)$/', $value, $matches) === 1) {
 				file_put_contents($filename, base64_decode($matches['base64']));
 			} else {
 				throw new InvalidArgumentException("failed to decode and save image.");
